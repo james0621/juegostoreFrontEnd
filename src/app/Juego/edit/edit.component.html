@@ -1,0 +1,72 @@
+<div class="container col-md-6 mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h3>Actualizar Juego</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+    		<div class="form-group">
+    		<label for="nombre">Nombre</label>
+    			<div>
+    				<input type="text" name="nombre" class="form-control" [(ngModel)]="juego.nombre">
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+    		<label for="anio">Año</label>
+    			<div>
+    				<input type="text" name="anio" class="form-control" [(ngModel)]="juego.anio">
+    			</div>
+    		</div>
+    		<div class="form-group">
+    		<label for="protagonista">Protagonista</label>
+    			<div>
+    				<input type="text" name="protagonista" class="form-control" [(ngModel)]="juego.protagonista">
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+    		<label for="director">Director</label>
+    			<div>
+    				<input type="text" name="director" class="form-control" [(ngModel)]="juego.director">
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+    		<label for="productor">Productor</label>
+    			<div>
+    				<input type="text" name="productor" class="form-control" [(ngModel)]="juego.productor">
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+    		<label for="tecnologia">Tecnologia</label>
+    			<div>
+    				<input type="text" name="tecnologia" class="form-control" [(ngModel)]="juego.tecnologia">
+    			</div>
+    		</div>
+
+        <div class="form-group">
+    		<label for="precioAlquiler">Precio alquiler</label>
+    			<div>
+    				<input type="text" name="precioAlquiler" class="form-control" [(ngModel)]="juego.precioAlquiler">
+    			</div>
+    		</div>
+
+        <div class="form-group">
+    		<label for="cantidad">Cantidad</label>
+    			<div>
+    				<input type="text" name="cantidad" class="form-control" [(ngModel)]="juego.cantidad">
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+    			<div>
+    				<button (click)="Actualizar(juego)" class="btn btn-success">Guardar</button>
+    			</div>
+    		</div>
+
+    	</form>
+    </div>
+  </div>
+</div>

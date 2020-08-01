@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h3>Juegos</h3>
+      <button (click)="Nuevo()" class="btn btn-info">Nuevo</button>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr class="text-center">
+            <th>Nombre</th>
+    				<th>Año</th>
+    				<th>Protagonista</th>
+    				<th>Director</th>
+    				<th>Productor</th>
+    				<th>Tecnologia</th>
+    				<th>Precio Alquiler</th>
+    				<th>Cantidad Disponible</th>
+    				<th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let juego of juegos" class="text-center">
+            <td>{{juego.nombre}}</td>
+            <td>{{juego.anio}}</td>
+            <td>{{juego.protagonista}}</td>
+            <td>{{juego.director}}</td>
+            <td>{{juego.productor}}</td>
+            <td>{{juego.tecnologia}}</td>
+            <td>{{juego.precioAlquiler}}</td>
+            <td>{{juego.cantidad}}</td>
+            <td>
+              <button (click)="Editar(juego)" class="btn btn-warning">Editar</button>
+              <button (click)="Delete(juego)" class="btn btn-danger mt-2" style="margin-left:5px;">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
