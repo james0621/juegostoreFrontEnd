@@ -12,7 +12,13 @@ import { ListarJuegoComponent } from './Juego/listar/listar.component';
 import { AddJuegoComponent } from './Juego/add/add.component';
 import { EditJuegoComponent } from './Juego/edit/edit.component';
 import { ServiceJuego } from '../app/ServiceJuego/servicejuego.service';
+import { ListarFacturaComponent } from './Factura/listar/listar.component';
+import { AddFacturaComponent } from './Factura/add/add.component';
+import { EditFacturaComponent } from './Factura/edit/edit.component';
+import { ServicefacturaService } from '../app/ServiceFactura/servicefactura.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BuscarjuegosComponent } from './Search/buscarjuegos/buscarjuegos.component';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 
 @NgModule({
@@ -23,7 +29,12 @@ import { HttpClientModule } from '@angular/common/http';
     EditComponent,
     ListarJuegoComponent,
     AddJuegoComponent,
-    EditJuegoComponent
+    EditJuegoComponent,
+    ListarFacturaComponent,
+    AddFacturaComponent,
+    EditFacturaComponent,
+    BuscarjuegosComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     ServiceCliente,
-    ServiceJuego
+    ServiceJuego,
+    ServicefacturaService
   ],
   bootstrap: [AppComponent]
 })

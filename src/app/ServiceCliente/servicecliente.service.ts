@@ -30,4 +30,5 @@ export class ServiceCliente {
   deleteCliente(cliente:Cliente){
     return this.http.delete<Cliente>(this.Url+"/"+cliente.id);
   }
+
 }

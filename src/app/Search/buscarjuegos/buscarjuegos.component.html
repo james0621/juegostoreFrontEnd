@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col">
+    <input #termino type="text"  (keyup)="buscar(termino.value)" class="form-control" placeholder="Nombre Juego..." >
+  </div>
+</div>
+
+<div class="card-columns m-5">
+  <div *ngFor="let juego of juegos" class="card">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{juego.nombre | uppercase}}</h5>
+        <p class="card-text">{{juego.tecnologia}}</p>
+        <p class="card-text">{{juego.precioAlquiler | currency}}</p>
+        <p *ngIf="juego.cantidad > 0" class="card-text">Disponible</p>
+        <p *ngIf="juego.cantidad == 0" class="card-text">Agotado</p>
+        <a *ngIf="juego.cantidad > 0" (click)="Alquilar(juego)" class="btn btn-danger">Alquilar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loading *ngIf="loading" class ="m-5"></app-loading>

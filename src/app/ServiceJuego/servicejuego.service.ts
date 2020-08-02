@@ -30,4 +30,8 @@ export class ServiceJuego {
   deleteJuego(juego:Juego){
     return this.http.delete<Juego>(this.Url+"/"+juego.id);
   }
+
+  getJuegosTermino(termino:string){
+    return this.http.get<Juego[]>(this.Url+"/buscarJuego?termino="+termino);
+  }
 }
