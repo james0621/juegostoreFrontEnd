@@ -9,7 +9,7 @@ export class ServiceCliente {
 
   constructor(private http:HttpClient) { }
 
-  Url='http://localhost:8070/juegostore/cliente';
+  Url='http://localhost:8080/juegostore/cliente';
 
   getClientes(){
     return this.http.get<Cliente[]>(this.Url);

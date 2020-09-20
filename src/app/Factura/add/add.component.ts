@@ -16,13 +16,11 @@ export class AddFacturaComponent implements OnInit {
   juego:Juego= new Juego();
   cliente:Cliente = new Cliente();
   factura:Factura = new Factura();
-  constructor(private serviceJuego:ServiceJuego, private serviceFactura:ServicefacturaService) { }
+  constructor(private router:Router, private serviceJuego:ServiceJuego, private serviceFactura:ServicefacturaService) { }
 
   ngOnInit(): void {
     this.Alquilar();
   }
-
-
 
 Alquilar(){
   let id= localStorage.getItem("id");
@@ -42,8 +40,20 @@ Alquilar(){
    });
  }
 
-  Guardar(juego:Juego,factura:Factura){
-    
+  Guardar(){
+    if(this.factura != null){
+      if(this.cliente != null && this.juego != null ){
+        this.factura.juego = this.juego;
+        this.factura.cliente = this.cliente;
+        this.serviceFactura.createFactura(this.factura).subscribe(data=>{
+          this.router.navigate(["alquilar/buscar"])
+        });
+      }else{
+        alert("Cliente o juego null");
+      }
+    }else{
+      alert("Factura null");
+    }
   }
 
 }
