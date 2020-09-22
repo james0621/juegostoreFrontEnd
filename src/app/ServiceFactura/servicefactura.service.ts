@@ -16,6 +16,22 @@ export class ServicefacturaService {
     return this.http.get(this.Url+"/buscarCliente?documento="+documento);
   }
 
+  getFacturas(){
+    return this.http.get<Factura[]>(this.Url);
+  }
+
+  getFacturaId(id:number){
+    return this.http.get<Factura>(this.Url+'/'+id);
+  }
+
+  updateFactura(factura:Factura){
+    return this.http.put<Factura>(this.Url+'/'+factura.id, factura);
+  }
+
+  deleteFactura(factura:Factura){
+    return this.http.delete<Factura>(this.Url+'/'+factura.id);
+  }
+
   createFactura(factura:Factura){
     return this.http.post<Factura>(this.Url, factura);
   }

@@ -6,4 +6,6 @@ export class Factura{
 	cliente:Cliente;
 	juego:Juego;
 	fechaVencimiento:Date;
+	fechaEntrega:Date;
+	entrgado:Boolean;
 }
